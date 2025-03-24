@@ -1,0 +1,12 @@
+
+
+.houseSVG {
+    
+    z-index: -10;
+    position: fixed;
+    bottom: 0;
+    left: 2%;
+    margin-bottom:25%;
+    max-width: 35%;;
+    
+}

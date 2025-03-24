@@ -1,0 +1,156 @@
+
+
+body {
+    margin: 0;
+    font-family: "Itim", cursive;
+    font-weight: bold;
+    overflow: hidden;
+    
+  }
+
+
+
+
+  
+  
+  a {
+    color: #000000;
+    text-decoration: none;
+   
+  }
+
+  .navBar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    list-style-type: none;
+    background-color: rgb(120, 134, 199, 60%);
+    height: max-content;
+    padding: 1%;
+    border-radius: 15px;
+    
+    
+    
+    
+  }
+  
+ 
+  
+
+    
+  
+  
+  
+  
+  ul.dropDown {
+    width: 100px;
+    z-index: 999;
+    display: none;
+    transition: .5s ease-in;
+    
+    
+    
+    
+  }
+  
+  .registerLogin {
+    
+    display: flex;
+    margin-right: 6%;
+    align-items: initial;
+    justify-content: space-between;   
+    margin-top: -1.8%;
+    padding: 1%;
+    
+  }
+  .L {
+    padding: 0.8%;
+    background-color: #FF9D23 ;
+    border-radius: 10px;
+    justify-content: center;
+    position: fixed;
+    margin-left: -5%;
+    
+    
+    
+    
+  }
+
+  .S {
+    padding: 0.8%;
+    background-color: #FF9D23 ;
+    border-radius: 10px;
+    margin-left: 1%;
+    position: fixed;
+   
+
+    
+    
+    
+  }
+
+  li.dropList:hover ul.dropDown li {
+   
+    position: relative;
+    background-color: #7886C7;
+    border-radius: 20px;
+    z-index: 99;
+    transition: height 1, ease-in;
+  }
+  
+  li.dropList:hover ul.dropDown {
+    display: flex;
+    background-color: #7886C7;
+    border-radius: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 999;
+
+    width: 250px;
+    height: 220px;
+    
+    
+  }
+  
+
+
+  
+  
+  
+
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    list-style-type: none;
+    height: max-content;
+    padding: 1%;
+    border-radius: 15px;
+    margin-top: 44%;
+    border: 2px solid #B3D8A8;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .item1 {grid-area: 1 / span 6;}
+    .item2 {grid-area: 2 / span 6;}
+    .item3 {grid-area: 3 / span 6;}
+    .item4 {grid-area: 4 / span 6;}
+    .item5 {grid-area: 5 / span 6;}
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .item1 {grid-area: 1 / span 6;}
+    .item2 {grid-area: 2 / span 1;}
+    .item3 {grid-area: 2 / span 4;}
+    .item4 {grid-area: 3 / span 6;}
+    .item5 {grid-area: 4 / span 6;}
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .item1 {grid-area: 1 / span 6;}
+    .item2 {grid-area: 2 / span 1;}
+    .item3 {grid-area: 2 / span 4;}
+    .item4 {grid-area: 2 / span 1;}
+    .item5 {grid-area: 3 / span 6;}
+  }
