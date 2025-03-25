@@ -124,11 +124,14 @@ body {
     justify-content: space-between;
     font-size: 25px;
     list-style-type: none;
-    height: max-content;
+    bottom: 0%;
+    width: 97.8%;
+    position: absolute;
     padding: 1%;
     border-radius: 15px;
-    margin-top: 44%;
+    
     border: 2px solid #B3D8A8;
+    
   }
 
   @media only screen and (max-width: 600px) {

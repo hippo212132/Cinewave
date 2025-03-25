@@ -23,7 +23,7 @@ def index():
 
         return render_template("index.html") #If Session is not avaliable, render Logged-out Home page
     
-    return render_template("index.htmk", user=session["user"]) #If Session is avaliable, Render Logged-in Home Page
+    return render_template("index.html", user=session["user"]) #If Session is avaliable, Render Logged-in Home Page
 
 
 
@@ -36,29 +36,53 @@ def signup():
 
     if request.method == "POST": #If Form method == POST then gather the inputted fields
 
+        
+        username = request.form.get("username")
 
-        email = request.form.get("Email")
+        if len(username) <= 0 >= 16:
+            return render_template("signup.html", error="Username must be between 1-16 characters")
         
-       
-        username = request.form.get("Username")
+        if not str(username):
+            return render_template("signup.html", error="No numbers or special characters allowed")
         
         
-        password = request.form.get("Password")
+        
+        
+        
+        
+        email = request.form.get("email")
+
+        
+
+        if ".com" not in email or "gmail"  and "@" not in email:
+
+            return render_template("signup.html", error="Please enter a valid email")
+        
+        
+        password = request.form.get("password")
+        if len(password) < 8:
+            return render_template("signup.html", error="Please Enter a Valid password")
        
         
         cpass = request.form.get("cpass")
         
-        
-        phone = request.form.get("Phone")
+        if cpass != password:
+            return render_template("signup.html", error="Please make sure confirm password matches password")
         
 
-        user = db.create_user(email, username, password, phone) #Calls the DB Create function from the DB file
+        user = db.createUser(username, email, password) #Calls the DB Create function from the DB file
 
-        session["user"] = user 
+        
 
         return render_template("login.html") #Renders login page to allow user to login
     else:
         return render_template("signup.html")
+    
+
+
+
+
+
     
 @app.route("/login") #Login Page
 def login():

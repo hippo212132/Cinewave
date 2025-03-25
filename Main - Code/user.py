@@ -1,9 +1,9 @@
 class user:
-    def __init__(self, id, email, username, password, phone_number):
+    def __init__(self, id, username, email, password):
         self.id = id
-        self.email = email
         self.username = username
+        self.email = email
         self.password = password
-        self.phone_number = phone_number
+
 
 #Creating a general USER class which means anyone thats signed up to the database
