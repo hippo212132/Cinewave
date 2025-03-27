@@ -86,6 +86,21 @@ def signup():
     
 @app.route("/login") #Login Page
 def login():
+
+    if not session.get("user"):
+        return render_template("login.html")
+    
+
+    if request.method == "POST":
+    
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        user = db.checkUser(email, password)
+
+        session["user"] = user
+
+        return render_template("index.html", user=session["user"])
     
     return render_template("login.html")
 

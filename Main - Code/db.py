@@ -29,4 +29,14 @@ def createUser(username, email, password):
 
     
 
+
     return user(id, username, email, password)
+
+
+def checkUser(email,password):
+
+    password = hash(password)
+
+    cur.execute("SELECT * FROM Users WHERE Email = ? AND Password = ?", (email, password))
+
+    return cur.fetchone

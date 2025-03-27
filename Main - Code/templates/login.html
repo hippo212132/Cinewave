@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="static/styles.css">
     <title>Login NAV TEST</title>
     <body>
+
+        <form class="loginForm" method="POST" action="/login"> <!--Registry Form-->
+
+            <h1>Login</h1>
+            <p>Don't have an account?<a href="/signup">Login</a></p> 
+
+            <div class="inputsDIV"> <!--Input Fields-->
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+           
+            </div>
+
+            <button class="loginBTN">SIGN UP</button> <!--Form Submit-->
+
         
     </body>
 {%endblock%}
