@@ -70,7 +70,7 @@ def signup():
             return render_template("signup.html", error="Please make sure confirm password matches password")
         
 
-        user = db.createUser(username, email, password) #Calls the DB Create function from the DB file
+        db.createUser(username, email, password) #Calls the DB Create function from the DB file
 
         
 
@@ -87,14 +87,31 @@ def signup():
 @app.route("/login") #Login Page
 def login():
 
-    if not session.get("user"):
-        return render_template("login.html")
+    #if not session.get("user"):
+        #return render_template("login.html")
     
 
     if request.method == "POST":
     
         email = request.form.get("email")
+        #Email Validation
+        if len(email) <= 0:
+            return render_template("login.html", error="Please enter a valid EMAIL")
+        
+        symbol = "@"
+        domain = ".com"
+        specialChar1 = "!"
+
+        if symbol not in email and domain not in email and specialChar1 not in email:
+            return render_template("login.html", error="An email must contain one @ Symbol")
+        #~~~~~~~~~~~~~~
+
+
         password = request.form.get("password")
+        #Password Validation
+        if len(password) < 8:
+            return render_template("login.html", error="Please enter your correct password")
+        
 
         user = db.checkUser(email, password)
 
