@@ -1,0 +1,49 @@
+{%extends layout.html %}
+
+{%block content%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Bookings</title>
+</head>
+<body>
+    <h1>All Bookings</h1>
+
+    <h2>Consultations</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Quantity</th>
+        </tr>
+        {% for consultation in consultations %}
+        <tr>
+            <td>{{ consultation[0] }}</td>
+            <td>{{ consultation[1] }}</td>
+            <td>{{ consultation[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Solar Panel Installations</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Quantity</th>
+        </tr>
+        {% for installation in solar_installations %}
+        <tr>
+            <td>{{ installation[0] }}</td>
+            <td>{{ installation[1] }}</td>
+            <td>{{ installation[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
+
+{%endblock%}

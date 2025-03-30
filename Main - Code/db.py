@@ -40,3 +40,34 @@ def checkUser(email,password):
     cur.execute("SELECT * FROM Users WHERE Email = ? AND Password = ?", (email, password))
 
     return cur.fetchone
+
+def add_consultation(date, quantity):
+    cur.execute('INSERT INTO Consultations (consultation_date, quantity) VALUES (?, ?)', (date, quantity))
+    connection.commit()
+    connection.close()
+    
+def add_solar_installation(date, quantity):
+    conn = sqlite3.connect('booking_system.db')
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO SolarPanelInstallations (installation_date, quantity) VALUES (?, ?)', (date, quantity))
+    conn.commit()
+    conn.close()
+
+
+
+def view_bookings(consultations, solar_installations):
+    conn = sqlite3.connect('booking_system.db')
+    cursor = conn.cursor()
+
+    # Fetch consultation bookings
+    cursor.execute('SELECT * FROM Consultations')
+    consultations = cursor.fetchall()
+
+    # Fetch solar installation bookings
+    cursor.execute('SELECT * FROM SolarPanelInstallations')
+    solar_installations = cursor.fetchall()
+
+    conn.close()
+    
+    return consultations, solar_installations
+
