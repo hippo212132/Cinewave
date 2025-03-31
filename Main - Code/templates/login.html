@@ -24,6 +24,10 @@
 
             <button class="loginBTN">LOGIN</button> <!--Form Submit-->
 
+            {% if error %}
+            <p class="error"> {{ error }}</p>
+            {% endif %}
+
         
     </body>
 {%endblock%}

@@ -84,11 +84,11 @@ def signup():
 
 
     
-@app.route("/login") #Login Page
+@app.route("/login", methods=["GET", "POST"]) #Login Page
 def login():
 
-    #if not session.get("user"):
-        #return render_template("login.html")
+    if session.get("user"):
+        return render_template("index.html", user=session["user"])
     
 
     if request.method == "POST":
@@ -102,15 +102,14 @@ def login():
         domain = ".com"
         specialChar1 = "!"
 
-        if symbol not in email and domain not in email and specialChar1 not in email:
+        if symbol not in email and domain not in email:
             return render_template("login.html", error="An email must contain one @ Symbol")
         #~~~~~~~~~~~~~~
 
 
         password = request.form.get("password")
-        #Password Validation
-        if len(password) < 8:
-            return render_template("login.html", error="Please enter your correct password")
+        #Password Validation not required since all it has to do is match the database
+        
         
 
         user = db.checkUser(email, password)
@@ -118,29 +117,42 @@ def login():
         session["user"] = user
 
         return render_template("index.html", user=session["user"])
-    
-    return render_template("login.html")
+    else:
+        return render_template("login.html")
 
-@app.route("/book")
+@app.route("/book", methods=["POST", "GET"])
 def booking():
-
+    if not session.get("user"):
+        return render_template("signup.html")
+    
     if request.method == 'POST':
-        booking_type = request.form['booking_type']
-        date = request.form['date']
-        quantity = int(request.form['quantity'])
+        booking_type = request.form.get("booking_type")
+        date = request.form.get("date")
+        quantity = request.form.get("quantity")
 
         if booking_type == 'consultation':
             db.add_consultation(date, quantity)
             return redirect(url_for('index'))
+        
         elif booking_type == 'solar_installation':
             db.add_solar_installation(date, quantity)
             return redirect(url_for('index'))
 
-    return render_template('book.html')
+    return render_template('booking.html', user=session["user"])
+
+@app.route("/logout")
+def logout():
+    if session.get("user"):
+        session.clear()
+
+        return render_template("index.html")
 
 @app.route('/view')
-def viewBookings(consultations, solar_installations):
-    return render_template('view_bookings.html', consultations=consultations, solar_installations=solar_installations)
+def viewBookings():
+    
+    cons = db.viewConsultations
+    install = db.viewInstallations
+    return render_template('viewbookings.html', user=session["user"], cons=cons, install=install)
 
 @app.route("/CCF") #Calculate Carbon Footprint [Client Requirement]
 def CCF():

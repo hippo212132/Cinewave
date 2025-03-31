@@ -22,8 +22,8 @@
         </header>
 
         <li><a href="/">Home</a></li>
-        <li><a href="/signup">Bookings</a></li> <!--You have to be logged-in to book [Will CHANGE]-->
-
+        <li><a href="/book">Bookings</a></li> <!--You have to be logged-in to book [Will CHANGE]-->
+        
         <li class="dropList"> <!--The Explore Dropdown menu-->
             <a>Explore</a>
 
@@ -33,11 +33,24 @@
                 <li><a href="/HTRCF">How to reduce your carbon footprint</a></li>
             </ul>
         </li>
+        {% if user %}
+        <li class="dropList"> <!--The Explore Dropdown menu-->
+            <a>Profile</a>
 
+            <ul class="dropDown"> <!--Dropdown Menu Contents-->
+                <li><a href="/view">View Bookings</a></li>
+                <li><a href="/account">Account Settings</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </li>
+       
+
+        {% else %}
         <div class="registerLogin">
         <li class="S"><a href="/signup">Signup</a></li>
         <li class="L"><a href="/login">Login</a></li>
         </div>
+        {%endif%}
             
     
 
@@ -56,5 +69,7 @@
     {% block content %}
 
     {% endblock %}
+
+    <script style="left: 3%; height: 9.5%;" src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
 </body>
 <html>

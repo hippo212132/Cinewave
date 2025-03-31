@@ -39,7 +39,7 @@ def checkUser(email,password):
 
     cur.execute("SELECT * FROM Users WHERE Email = ? AND Password = ?", (email, password))
 
-    return cur.fetchone
+    return cur.fetchall()
 
 def add_consultation(date, quantity):
     cur.execute('INSERT INTO Consultations (consultation_date, quantity) VALUES (?, ?)', (date, quantity))
@@ -47,27 +47,26 @@ def add_consultation(date, quantity):
     connection.close()
     
 def add_solar_installation(date, quantity):
-    conn = sqlite3.connect('booking_system.db')
-    cursor = conn.cursor()
-    cursor.execute('INSERT INTO SolarPanelInstallations (installation_date, quantity) VALUES (?, ?)', (date, quantity))
-    conn.commit()
-    conn.close()
+    
+    cur.execute('INSERT INTO SolarPanelInstallations (installation_date, quantity) VALUES (?, ?)', (date, quantity))
+    connection.commit()
+    connection.close()
 
 
 
-def view_bookings(consultations, solar_installations):
-    conn = sqlite3.connect('booking_system.db')
-    cursor = conn.cursor()
+def viewConsultations():
 
     # Fetch consultation bookings
-    cursor.execute('SELECT * FROM Consultations')
-    consultations = cursor.fetchall()
+    cur.execute('SELECT * FROM Consultations')
 
-    # Fetch solar installation bookings
-    cursor.execute('SELECT * FROM SolarPanelInstallations')
-    solar_installations = cursor.fetchall()
-
-    conn.close()
     
-    return consultations, solar_installations
+    return cur.fetchall()
+
+def viewInstallations():
+    
+    # Fetch installation bookings
+    cur.execute('SELECT * FROM SolarPanelInstallations')
+
+    
+    return cur.fetchall()
 
