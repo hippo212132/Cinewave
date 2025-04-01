@@ -1,0 +1,26 @@
+{%extends "layout.html" %}
+
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>acc</title>
+    <body>
+        <form method="POST">
+        <label for="twoFactorEnabled">Enable Two Factor Authentication</label><br>
+        <select name="2fa">
+            <option value="Enable">Enable</option>
+            <option value="Disable">Disable</option>
+            
+        </select>
+        <button type="submit">Confirm</button><br><br>
+        
+        
+        </form>
+
+        
+    </body>
+{%endblock%}

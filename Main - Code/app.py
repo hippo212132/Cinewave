@@ -127,15 +127,16 @@ def booking():
     
     if request.method == 'POST':
         booking_type = request.form.get("booking_type")
+        time = request.form.get("time")
         date = request.form.get("date")
         quantity = request.form.get("quantity")
 
         if booking_type == 'consultation':
-            db.add_consultation(date, quantity)
+            db.add_consultation(date, time, quantity)
             return redirect(url_for('index'))
         
         elif booking_type == 'solar_installation':
-            db.add_solar_installation(date, quantity)
+            db.add_solar_installation(date, time, quantity)
             return redirect(url_for('index'))
 
     return render_template('booking.html', user=session["user"])
@@ -150,42 +151,92 @@ def logout():
 @app.route('/view')
 def viewBookings():
     
-    cons = db.viewConsultations
-    install = db.viewInstallations
-    return render_template('viewbookings.html', user=session["user"], cons=cons, install=install)
+    consultations = db.viewConsultations()
+    solar_installations = db.viewInstallations()
+    return render_template('viewbookings.html', user=session["user"], consultations=consultations, solar_installations=solar_installations)
 
 @app.route("/CCF") #Calculate Carbon Footprint [Client Requirement]
 def CCF():
 
+    if session.get("user"):
+        return render_template("CCF.html", user=session["user"])
+
     return render_template("CCF.html")
+
+@app.route("/account", methods=["POST", "GET"])
+def account():
+
+    if not session.get("user"):
+        return render_template("index.html")
+    
+
+    
+    if request.method == "POST":
+        
+        type = request.form.get("2fa")
+        enable = request.form.get("Enable")
+        disable = request.form.get("Disable")
+
+        if type == enable:
+            db.twoFactorEnabled()
+
+        elif type == disable:
+            db.twoFactorDisabled()
+    
+    return render_template("account.html", user=session["user"])
+        
 
 @app.route("/EP") #Energy Products [Client Requirement]
 def EP():
+
+    if session.get("user"):
+        return render_template("EP.html", user=session["user"])
+
 
     return render_template("EP.html")
 
 @app.route("/HTRCF") #How to reduce your carbon footprint [Client Requirement]
 def HTRCF():
 
+    if session.get("user"):
+        return render_template("HTRCF.html", user=session["user"])
+
+
     return render_template("HTRCF.html")
 
 @app.route("/about") #aboutUs Page
 def aboutUs():
+
+    if session.get("user"):
+        return render_template("aboutUS.html", user=session["user"])
+
 
     return render_template("aboutUS.html")
 
 @app.route("/support") #Support page
 def support():
 
+    if session.get("user"):
+        return render_template("support.html", user=session["user"])
+
+
     return render_template("support.html")
 
 @app.route("/legal") #Legal Page/legal Requirements page
 def legal():
 
+    if session.get("user"):
+        return render_template("legal.html", user=session["user"])
+    
+
     return render_template("legal.html")
 
 @app.route("/PP") #Privacy Policy page
 def privacyPolicy():
+
+    if session.get("user"):
+        return render_template("pp.html", user=session["user"])
+
 
     return render_template("pp.html")
 

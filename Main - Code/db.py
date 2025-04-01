@@ -41,14 +41,14 @@ def checkUser(email,password):
 
     return cur.fetchall()
 
-def add_consultation(date, quantity):
-    cur.execute('INSERT INTO Consultations (consultation_date, quantity) VALUES (?, ?)', (date, quantity))
+def add_consultation(date, time, quantity):
+    cur.execute('INSERT INTO Consultations (consultation_date, time, quantity) VALUES (?, ?, ?)', (date, time, quantity))
     connection.commit()
     connection.close()
     
-def add_solar_installation(date, quantity):
+def add_solar_installation(date, time, quantity):
     
-    cur.execute('INSERT INTO SolarPanelInstallations (installation_date, quantity) VALUES (?, ?)', (date, quantity))
+    cur.execute('INSERT INTO SolarPanelInstallations (installation_date, time, quantity) VALUES (?, ?, ?)', (date, time, quantity))
     connection.commit()
     connection.close()
 
@@ -70,3 +70,20 @@ def viewInstallations():
     
     return cur.fetchall()
 
+def twoFactorEnabled():
+
+    string1= "True"
+    
+
+
+
+    cur.execute("INSERT INTO Users (TwoFactorEnabled) VALUES (?)", (string1))
+    connection.commit()
+   
+
+def twoFactorDisabled():
+    string2 = "False"
+
+    cur.execute("INSERT INTO Users (TwoFactorEnabled) VALUES (?)", (string2))
+    connection.commit()
+    

@@ -32,11 +32,11 @@
             <th>Date</th>
             <th>Quantity</th>
         </tr>
-        {% for installation in solar_installations %}
+        {% for solar_installation in solar_installations %}
         <tr>
-            <td>{{ installation[0] }}</td>
-            <td>{{ installation[1] }}</td>
-            <td>{{ installation[2] }}</td>
+            <td>{{ solar_installation[0] }}</td>
+            <td>{{ solar_installation[1] }}</td>
+            <td>{{ solar_installation[2] }}</td>
         </tr>
         {% endfor %}
     </table>

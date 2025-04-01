@@ -2,22 +2,44 @@
 
 
 {%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<h1>Book Consultation or Solar Panel Installation</h1>
-    <form method="POST">
-        <label for="booking_type">Select Booking Type:</label><br>
-        <select name="booking_type">
-            <option value="consultation">Consultation</option>
-            <option value="solar_installation">Solar Panel Installation</option>
-        </select><br><br>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>acc</title>
 
-        <label for="date">Booking Date:</label><br>
-        <input type="date" name="date" required><br><br>
+    <body>
 
-        <label for="quantity">Quantity:</label><br>
-        <input type="number" name="quantity" min="1" required><br><br>
+        <h1>Book Consultation or Solar Panel Installation</h1>
 
-        <button type="submit">Book Now</button>
-    </form>
+        <form class="bookingForm" method="POST">
+
+            <label for="booking_type">Select Booking Type:</label><br>
+            <select name="booking_type">
+                <option value="consultation">Consultation</option>
+                <option value="solar_installation">Solar Panel Installation</option>
+            </select><br><br>
+
+            
+                <div class="date">
+                <label for="date">Booking Date:</label><br>
+                <input  type="date" name="date" required><br><br>
+                </div>
+
+                <label for="time">Time:</label>
+                <input type="time" name="time" required><br><br>
+
+                <label for="quantity">Quantity:</label><br>
+                <input type="number" name="quantity" min="1" required><br><br>
+
+                <button type="submit">Book Now</button>
+            
+        </form>
+    </body> 
+</head>
+
 
 {%endblock%}
