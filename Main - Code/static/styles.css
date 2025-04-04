@@ -34,9 +34,13 @@
 .bookingForm {
    margin-left: 10%;
    margin-top: 10%;
+   padding: 20px;
+   
    
 }
 
 .date {
-    size: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 135px;
 }
