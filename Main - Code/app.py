@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_session import Session
+import datetime
 
 import db
 
@@ -127,8 +128,16 @@ def booking():
     
     if request.method == 'POST':
         booking_type = request.form.get("booking_type")
+
         time = request.form.get("time")
+
+        dateTime = datetime.datetime.now()
+        if time < str(dateTime.time()):
+            return render_template("booking.html", error="You cannot enter a past time")
+
         date = request.form.get("date")
+        if date < str(datetime.date.today()):
+            return render_template("booking.html", error="You cannot enter a past date")
         quantity = request.form.get("quantity")
 
         if booking_type == 'consultation':

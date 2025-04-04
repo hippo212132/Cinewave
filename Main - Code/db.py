@@ -44,13 +44,13 @@ def checkUser(email,password):
 def add_consultation(date, time, quantity):
     cur.execute('INSERT INTO Consultations (consultation_date, time, quantity) VALUES (?, ?, ?)', (date, time, quantity))
     connection.commit()
-    connection.close()
+    
     
 def add_solar_installation(date, time, quantity):
     
     cur.execute('INSERT INTO SolarPanelInstallations (installation_date, time, quantity) VALUES (?, ?, ?)', (date, time, quantity))
     connection.commit()
-    connection.close()
+    
 
 
 
