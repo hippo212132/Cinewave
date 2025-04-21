@@ -4,7 +4,7 @@ body {
     margin: 0;
     font-family: "Itim", cursive;
     font-weight: bold;
-    overflow: hidden;
+    overflow: scroll;
     
   }
 
@@ -20,6 +20,7 @@ body {
   }
 
   .navBar {
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
     font-size: 25px;
@@ -27,7 +28,10 @@ body {
     background-color: rgb(120, 134, 199, 60%);
     height: max-content;
     padding: 1%;
+    width: 98%;
     border-radius: 15px;
+    position: fixed;
+    z-index: 1000;
     
     
     
@@ -95,6 +99,7 @@ body {
     border-radius: 20px;
     z-index: 99;
     transition: height 1, ease-in;
+    gap: -20px;
   }
   
   li.dropList:hover ul.dropDown {
@@ -106,7 +111,7 @@ body {
     z-index: 999;
 
     width: 250px;
-    height: 220px;
+    gap: 20px;
     
     
   }
@@ -119,17 +124,21 @@ body {
 
 
   .footer {
+    font-weight: normal;
     display: flex;
     justify-content: space-between;
     font-size: 25px;
     list-style-type: none;
-    bottom: 0%;
     width: 97.8%;
-    position: absolute;
     padding: 1%;
     border-radius: 15px;
-    
+    bottom: 0%;
     border: 2px solid #B3D8A8;
+     position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
     
   }
 

@@ -1,4 +1,85 @@
+.container {
+    left: 5%;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px; /* Optional: constrain width of the container */
+    margin-top: 200px;
+    
+   
+   
+}
+   
+.loginBody {
+    margin: 0;
+    padding: 0;
+    
+    
+}
+    
+.sienna_widget {
+    position: fixed;
+  top: 20px;
+  left: 20px;
+  bottom: auto;
+  right: auto;
+  z-index: 9999;
+}
 
+.loginForm {
+    align-items: center;
+    padding: 40px;
+    margin-top: 120px;;
+   
+    gap: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    height: 400px;
+    width: 400px; /* Set a fixed width */
+    margin-left:37.5%;
+
+   
+    
+ 
+}
+
+.inputsDIV input {
+    width: 78%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.loginBTN {
+    
+    padding: 12px;
+    width: 85%;
+    background-color: #fbc02d;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;    
+    justify-content: center;
+    
+    
+   
+    
+}
+
+.loginBTN:hover {
+    background-color: #f9a825;
+}
+
+
+.error {
+    color: red;
+    font-size: 14px;
+}
 
 .houseSVG {
     
@@ -10,11 +91,14 @@
     max-width: 35%;;
     
 }
+.error {
+    color: red;
+}
 
 .signupForm {
-    left: 5%;
+    left: 30.5%;
     bottom: 0;
-    margin-bottom:30%;
+    margin-bottom:14%;
     max-width: 35%;
     position: fixed;
     display: flex;
@@ -22,6 +106,173 @@
     max-width: 50%;
     width: 15%;
     height: 25%;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 50px;
+    padding-bottom: 200px;
+    padding-right: 300px;;
+    
+}
+
+.signupBTN {
+    padding: 12px;
+    width: 85%;
+    background-color: #2e7d32;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;    
+    justify-content: center;
+    
+}
+.social-buttons {
+    margin-left: 315px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 255px;
+    margin-top: -425px;
+   
+   
+  }
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .product-content {
+    padding: 15px;
+  }
+
+  .product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .product-description {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+  
+  }
+  main {
+    overflow: scroll;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  h1, h2 {
+    color: #2e7d32;
+  }
+  h1 {
+    text-align: center;
+  }
+  .bio {
+    text-align: center;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  ul {
+    padding-left: 1.5rem;
+  }
+  .tip {
+    background-color: #e8f5e9;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 5px solid #66bb6a;
+    border-radius: 4px;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s ease;
+  }
+  
+  .social-btn i {
+    font-size: 18px;
+  }
+  
+  /* Individual Styles */
+  .google {
+    background-color: #db4437;
+  }
+  
+  .google:hover {
+    background-color: #c23321;
+  }
+  
+  .facebook {
+    background-color: #3b5998;
+  }
+  
+  .facebook:hover {
+    background-color: #2d4373;
+  }
+  
+  .apple {
+    background-color: #000;
+  }
+  
+  .apple:hover {
+    background-color: #333;
+  }
+ 
+
+.VL {   
+  border-left: 2px solid rgb(0, 0, 0);
+  height: 95%;
+  position: absolute;
+  left: 55%;
+  top: 2%;
 }
 
 .inputsDIV {
@@ -35,12 +286,135 @@
    margin-left: 10%;
    margin-top: 10%;
    padding: 20px;
+   width: 100%;
+   max-width: 600px;
+   margin: 50px auto;
+   padding: 20px;
+   background-color: #f9f9f9;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    
    
 }
 
+
+.cc {
+   text-align: center;
+   font-size: 26px;
+}
+
+.iframeC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.viewBTN {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: white;
+    background-color: #008812;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+}
+
+th {
+    background-color: #2e7c01;
+    color: white;
+    font-weight: 600;
+    opacity: 0.5;
+}
+.table-container {
+    overflow-x: auto;
+    margin-top: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    word-wrap: break-word;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.time {
+    border-radius: 10px;
+   padding: 5px;
+    
+
+}
+
 .date {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 135px;
+    border-radius: 10px;
+    padding: 5px;
+ }
+
+.qty {
+    border-radius: 10px;
+   padding: 5px;
+
+}
+
+.type {
+    border-radius: 10px;
+   padding: 5px;
+}
+
+.legalbdy {
+    margin-left: 3%;
+}
+
+.gf {
+    color: rgb(0, 137, 137);
+    text-decoration: underline;
+}
+
+.ud {
+    color: rgb(0, 137, 137);
+    text-decoration: underline;
+}
+
+.saw {
+    color: rgb(0, 137, 137);
+    text-decoration: underline;
+}
+
+.FAQ {
+    color: rgb(0, 137, 137);
+    text-decoration: underline;
+    font-size: large;
+}
+
+.supPage {
+    margin-left: 3%;
+}
+
+.ppBdy {
+    margin-left: 3%;
+}
+
+.P1 {
+    margin-left: 3%;
+    max-height: 50%;
+    
+}
+
+.p1-text {
+    margin-left: 3%;;
 }

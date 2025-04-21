@@ -13,12 +13,13 @@
 
     <body>
 
-        <h1>Book Consultation or Solar Panel Installation</h1>
+        
 
         <form class="bookingForm" method="POST">
+            <h1>Book Consultation or Solar Panel Installation</h1>
 
             <label for="booking_type">Select Booking Type:</label><br>
-            <select name="booking_type">
+            <select class="type" name="booking_type">
                 <option value="consultation">Consultation</option>
                 <option value="solar_installation">Solar Panel Installation</option>
             </select><br><br>
@@ -29,11 +30,11 @@
                 <input class="date"  type="date" name="date" required><br><br>
                 
 
-                <label for="time">Time:</label>
-                <input type="time" name="time" required><br><br>
+                <label for="time">Time:</label><br>
+                <input class="time" type="time" name="time" required><br><br>
 
                 <label for="quantity">Quantity:</label><br>
-                <input type="number" name="quantity" min="1" required><br><br>
+                <input class="qty" type="number" name="quantity" min="1" required><br><br>
                 </div>
                 <button type="submit">Book Now</button>
 

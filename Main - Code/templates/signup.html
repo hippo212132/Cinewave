@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="static/styles.css"> <!--Connect to styles.css-->
     <title>signup NAV TEST</title>
     <body>
-
+        
         <form class="signupForm" method="POST" action="/signup"> <!--Registry Form-->
 
             <h1>Sign Up</h1>
@@ -24,10 +24,18 @@
             </div>
 
             <button class="signupBTN">SIGN UP</button> <!--Form Submit-->
-
             {% if error %}
             <p class="error"> {{ error }}</p>
             {% endif %}
+            <div class="VL"></div>
+
+            <div class="social-buttons">
+                <button class="social-btn google"><i class="fab fa-google"></i> Sign up with Google</button>
+                <button class="social-btn facebook"><i class="fab fa-facebook-f"></i> Sign up with Facebook</button>
+                <button class="social-btn apple"><i class="fab fa-apple"></i> Sign up with Apple</button>
+              </div>
+
+            
 
         </form>
         

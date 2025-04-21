@@ -5,22 +5,28 @@
 <html>
 <head>
     <title>View Bookings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <h1>All Bookings</h1>
+    
 
     <h2>Consultations</h2>
     <table>
         <tr>
+            <th>ID</th>
             <th>Date</th>
             <th>QTY</th>
             <th>Time</th>
         </tr>
         {% for consultation in consultations %}
         <tr>
+            
             <td>{{ consultation[0] }}</td>
             <td>{{ consultation[1] }}</td>
             <td>{{ consultation[2] }}</td>
+            <td>{{ consultation[3] }}</td>
         </tr>
         {% endfor %}
     </table>
@@ -31,18 +37,20 @@
             <th>ID</th>
             <th>Date</th>
             <th>Quantity</th>
+            <th>Time</th>
         </tr>
         {% for solar_installation in solar_installations %}
         <tr>
             <td>{{ solar_installation[0] }}</td>
             <td>{{ solar_installation[1] }}</td>
             <td>{{ solar_installation[2] }}</td>
+            <td>{{ solar_installation[3] }}</td>
         </tr>
         {% endfor %}
     </table>
 
     <br>
-    <a href="{{ url_for('index') }}">Back to Home</a>
+    <a class="viewBTN" href="{{ url_for('index') }}">Back to Home</a>
 </body>
 </html>
 

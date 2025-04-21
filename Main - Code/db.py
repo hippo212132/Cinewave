@@ -42,13 +42,14 @@ def checkUser(email,password):
     return cur.fetchall()
 
 def add_consultation(date, time, quantity):
-    cur.execute('INSERT INTO Consultations (consultation_date, time, quantity) VALUES (?, ?, ?)', (date, time, quantity))
+    id = cur.lastrowid
+    cur.execute('INSERT INTO Consultations (ID, consultation_date, time, quantity) VALUES (?, ?, ?, ?)', (id, date, time, quantity))
     connection.commit()
     
     
 def add_solar_installation(date, time, quantity):
-    
-    cur.execute('INSERT INTO SolarPanelInstallations (installation_date, time, quantity) VALUES (?, ?, ?)', (date, time, quantity))
+    id = cur.lastrowid
+    cur.execute('INSERT INTO SolarPanelInstallations (ID, installation_date, time, quantity) VALUES (?, ?, ?, ?)', (id, date, time, quantity))
     connection.commit()
     
 

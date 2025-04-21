@@ -9,7 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/styles.css">
     <title>Login NAV TEST</title>
-    <body>
+    <body class="loginBody">
+        <br>
+        <br>
+        <br>
+        <br>
 
         <form class="loginForm" method="POST" action="/login"> <!--Login Form-->
 
@@ -24,9 +28,13 @@
 
             <button class="loginBTN">LOGIN</button> <!--Form Submit-->
 
+            
+
             {% if error %}
             <p class="error"> {{ error }}</p>
             {% endif %}
+
+            
 
         
     </body>
