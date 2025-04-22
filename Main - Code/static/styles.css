@@ -1,14 +1,76 @@
+/*********** Index *************/
+.VTEHeadings {
+    padding-top: 26%;
+    padding-left: 5%;
+    font-size: 28px;;
+    display: flex;
+    justify-content: space-between;
+    max-width: 30%;
+}
+
+.V {
+    background-color: #075512;
+    padding:5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.T {
+    background-color: #97ee8f;
+    padding:5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.E {
+    background-color: rgba(174, 237, 204, 0.751);
+    padding:5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.VTEList {
+    display: flex;
+    margin-left: 3%;;
+    justify-content: space-between;
+    max-width: 37%;
+    list-style: none;
+    font-size: 20px;
+}
+
+.houseSVG {
+    
+    z-index: -10;
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    margin-bottom:25%;
+    max-width: 35%;
+
+    
+}
+
+/* ********** Login *********** */
+
 .container {
     left: 5%;
-    background: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 20px;
-    max-width: 800px; /* Optional: constrain width of the container */
+    max-width: 800px; 
     margin-top: 200px;
     
    
    
+}
+
+.loginBackground {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: fit-content;
+    position: fixed;
+    z-index: -10;
 }
    
 .loginBody {
@@ -17,29 +79,38 @@
     
     
 }
+
+.loginBTN {
     
-.sienna_widget {
-    position: fixed;
-  top: 20px;
-  left: 20px;
-  bottom: auto;
-  right: auto;
-  z-index: 9999;
+    padding: 12px;
+    width: 85%;
+    background-color: #fbc02d;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;    
+    justify-content: center;
+
 }
+
+.loginBTN:hover {
+    background-color: #f9a825;
+}
+
 
 .loginForm {
     align-items: center;
     padding: 40px;
-    margin-top: 120px;;
-   
+    margin-top: 10%;;
     gap: 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     background-color: white;
     height: 400px;
     width: 400px; /* Set a fixed width */
-    margin-left:37.5%;
+    margin-left:10%;
 
    
     
@@ -54,26 +125,19 @@
     border-radius: 6px;
 }
 
-.loginBTN {
-    
-    padding: 12px;
-    width: 85%;
-    background-color: #fbc02d;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;    
-    justify-content: center;
-    
-    
-   
-    
-}
+/*********************/
 
-.loginBTN:hover {
-    background-color: #f9a825;
+/******** Widget ******/
+.sienna_widget {
+    position: fixed;
+  top: 20px;
+  left: 20px;
+  bottom: auto;
+  right: auto;
+  z-index: 9999;
 }
+/*********************/
+
 
 
 .error {
@@ -81,22 +145,23 @@
     font-size: 14px;
 }
 
-.houseSVG {
-    
-    z-index: -10;
-    position: absolute;
-    bottom: 0;
-    left: 2%;
-    margin-bottom:25%;
-    max-width: 35%;;
-    
-}
+
 .error {
     color: red;
 }
 
+/******** Signup ********/
+
+.signupBackground {
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;;
+    max-height: 99%;
+    position: fixed;
+    z-index: -10;
+}
 .signupForm {
-    left: 30.5%;
+    left: 13.5%;
     bottom: 0;
     margin-bottom:14%;
     max-width: 35%;
@@ -107,7 +172,7 @@
     width: 15%;
     height: 25%;
     background: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 50px;
     padding-bottom: 200px;
@@ -128,7 +193,7 @@
     
 }
 .social-buttons {
-    margin-left: 315px;
+    margin-left: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -136,92 +201,8 @@
     margin-top: -425px;
    
    
-  }
-  .catalog {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
+}
 
-  .product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
-  }
-
-  .product-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .product-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .product-content {
-    padding: 15px;
-  }
-
-  .product-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .product-description {
-    font-size: 14px;
-    color: #555;
-  }
-
-  .header {
-    background-color: #2e7d32;
-    color: white;
-    text-align: center;
-    margin-top: 80px;
-  
-  }
-  main {
-    overflow: scroll;
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
-  h1, h2 {
-    color: #2e7d32;
-  }
-  h1 {
-    text-align: center;
-  }
-  .bio {
-    text-align: center;
-  }
-  section {
-    margin-bottom: 2rem;
-  }
-  ul {
-    padding-left: 1.5rem;
-  }
-  .tip {
-    background-color: #e8f5e9;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-left: 5px solid #66bb6a;
-    border-radius: 4px;
-  }
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
 .social-btn {
     display: flex;
     align-items: center;
@@ -237,34 +218,34 @@
     transition: background 0.3s ease;
   }
   
-  .social-btn i {
+.social-btn i {
     font-size: 18px;
-  }
+}
   
   /* Individual Styles */
-  .google {
+.google {
     background-color: #db4437;
-  }
+}
   
-  .google:hover {
+.google:hover {
     background-color: #c23321;
-  }
+}
   
-  .facebook {
+.facebook {
     background-color: #3b5998;
-  }
+}
   
-  .facebook:hover {
+.facebook:hover {
     background-color: #2d4373;
-  }
+}
   
-  .apple {
+.apple {
     background-color: #000;
-  }
+}
   
-  .apple:hover {
+.apple:hover {
     background-color: #333;
-  }
+}
  
 
 .VL {   
@@ -274,6 +255,109 @@
   left: 55%;
   top: 2%;
 }
+
+/****************/
+
+/******* EP *****/
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+.product-content {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #555;
+}
+
+.header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+  
+}
+
+/******** HTRCF **************/
+
+main {
+    overflow: scroll;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2 {
+    color: #2e7d32;
+}
+
+h1 {
+    text-align: center;
+}
+
+.bio {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+.tip {
+    background-color: #e8f5e9;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 5px solid #66bb6a;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+/******************/
+
+/******** Booking *********/
 
 .inputsDIV {
     display: flex;
@@ -292,11 +376,14 @@
    padding: 20px;
    background-color: #f9f9f9;
    border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   
+   border: solid;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
    
 }
 
+/******************/
+
+/******* Carbon Calculator ********/
 
 .cc {
    text-align: center;
@@ -309,7 +396,9 @@
     align-items: center;
 }
 
+/*************************/
 
+/************ View Bookings ********/
 .viewBTN {
     display: inline-block;
     margin-top: 30px;
@@ -333,7 +422,7 @@ th {
     margin-top: 15px;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 th, td {
     padding: 14px;
@@ -350,7 +439,7 @@ table {
     border-collapse: collapse;
     margin-top: 15px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .time {
@@ -375,6 +464,10 @@ table {
     border-radius: 10px;
    padding: 5px;
 }
+
+/******************/
+
+/****** Additional pages *******/
 
 .legalbdy {
     margin-left: 3%;
@@ -418,3 +511,5 @@ table {
 .p1-text {
     margin-left: 3%;;
 }
+
+/******************/

@@ -55,6 +55,10 @@ body {
     
     
   }
+
+  .logoText {
+    padding-left: 65px;
+  }
   
   .registerLogin {
     

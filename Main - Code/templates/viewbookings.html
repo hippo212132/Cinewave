@@ -9,21 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/styles.css">
 </head>
-<body>
-    
+<body> <!--View Bookings-->
 
-    <h2>Consultations</h2>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>Consultations</h2> <!--Consultation Booking Section-->
     <table>
-        <tr>
+        <tr> <!--Columns-->
             <th>ID</th>
             <th>Date</th>
             <th>QTY</th>
             <th>Time</th>
         </tr>
-        {% for consultation in consultations %}
+        {% for consultation in consultations %} <!--All the data in the consultation database for this user-->
         <tr>
             
-            <td>{{ consultation[0] }}</td>
+            <!--Displayed In the corresponding collumn-->
+            <td>{{ consultation[0] }}</td> 
             <td>{{ consultation[1] }}</td>
             <td>{{ consultation[2] }}</td>
             <td>{{ consultation[3] }}</td>
@@ -31,7 +36,7 @@
         {% endfor %}
     </table>
 
-    <h2>Solar Panel Installations</h2>
+    <h2>Solar Panel Installations</h2> <!--Installation Booking Section-->
     <table>
         <tr>
             <th>ID</th>
