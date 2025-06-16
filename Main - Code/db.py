@@ -41,35 +41,25 @@ def checkUser(email,password):
 
     return cur.fetchall()
 
-def add_consultation(date, time, quantity):
+def book_ticket(date, time, quantity):
     id = cur.lastrowid
-    cur.execute('INSERT INTO Consultations (ID, consultation_date, time, quantity) VALUES (?, ?, ?, ?)', (id, date, time, quantity))
+    cur.execute('INSERT INTO Tickets (ID, ticket_date, time, quantity) VALUES (?, ?, ?, ?)', (id, date, time, quantity))
     connection.commit()
     
     
-def add_solar_installation(date, time, quantity):
-    id = cur.lastrowid
-    cur.execute('INSERT INTO SolarPanelInstallations (ID, installation_date, time, quantity) VALUES (?, ?, ?, ?)', (id, date, time, quantity))
-    connection.commit()
-    
 
 
 
-def viewConsultations():
+
+def viewTicket():
 
     # Fetch consultation bookings
-    cur.execute('SELECT * FROM Consultations')
+    cur.execute('SELECT * FROM Tickets')
 
     
     return cur.fetchall()
 
-def viewInstallations():
-    
-    # Fetch installation bookings
-    cur.execute('SELECT * FROM SolarPanelInstallations')
 
-    
-    return cur.fetchall()
 
 def twoFactorEnabled():
 

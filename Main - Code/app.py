@@ -140,12 +140,12 @@ def booking():
             return render_template("booking.html", error="You cannot enter a past date")
         quantity = request.form.get("quantity")
 
-        if booking_type == 'consultation':
-            db.add_consultation(date, time, quantity)
+        if booking_type == 'regTicket':
+            db.book_ticket(date, time, quantity)
             return redirect(url_for('index'))
         
-        elif booking_type == 'solar_installation':
-            db.add_solar_installation(date, time, quantity)
+        elif booking_type == 'premTicket':
+            db.book_ticket(date, time, quantity)
             return redirect(url_for('index'))
 
     return render_template('booking.html', user=session["user"])
@@ -160,9 +160,9 @@ def logout():
 @app.route('/view')
 def viewBookings():
     
-    consultations = db.viewConsultations()
-    solar_installations = db.viewInstallations()
-    return render_template('viewbookings.html', user=session["user"], consultations=consultations, solar_installations=solar_installations)
+    Tickets = db.viewTicket()
+    
+    return render_template('viewbookings.html', user=session["user"], Tickets=Tickets)
 
 @app.route("/CCF") #Calculate Carbon Footprint [Client Requirement]
 def CCF():
